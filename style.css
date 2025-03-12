@@ -1,11 +1,11 @@
-/* Стили в духе fpibank.com — чистые, ровные, с яркими акцентами */
-
+/* СБРОС БАЗОВЫХ СТИЛЕЙ */
 * {
-  margin: 0; 
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ОСНОВНЫЕ СТИЛИ САЙТА */
 body {
   font-family: "Arial", sans-serif;
   background-color: #fafafa;
@@ -13,14 +13,14 @@ body {
   line-height: 1.5;
 }
 
-/* Общие контейнеры */
+/* ОБЩИЕ КОНТЕЙНЕРЫ */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Шапка */
+/* ШАПКА (Hero Section) */
 .hero-section {
   background: linear-gradient(150deg, #ff00a8 0%, #00ff66 100%);
   padding: 80px 0;
@@ -54,15 +54,16 @@ body {
   border-radius: 4px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .hero-button:hover {
   background-color: #333;
 }
 
-/* Преимущества (features) */
+/* ПРЕИМУЩЕСТВА (Features) */
 .features {
-  background-color: #fff;
+  background-color: #fff; /* можно оставить #fafafa, если хочется более мягкого фона */
   color: #333;
   padding: 60px 0;
 }
@@ -97,7 +98,7 @@ body {
   color: #666;
 }
 
-/* Секция о нас (values) */
+/* СЕКЦИЯ О НАС (Values) */
 .values {
   background-color: #fafafa;
   padding: 60px 0;
@@ -109,7 +110,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* CTA */
+/* CTA (Call To Action) */
 .cta {
   background: linear-gradient(150deg, #00ff66 0%, #ff00a8 100%);
   color: #fff;
@@ -131,13 +132,14 @@ body {
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .cta-button:hover {
   background-color: #333;
 }
 
-/* Контакты */
+/* КОНТАКТЫ */
 .contacts {
   background-color: #fff;
   padding: 60px 0;
@@ -168,7 +170,7 @@ body {
   font-size: 20px;
 }
 
-/* Футер */
+/* ФУТЕР */
 footer {
   background-color: #f0f0f0;
   padding: 20px 0;
@@ -179,4 +181,23 @@ footer p {
   font-size: 14px;
   color: #888;
   margin: 0;
+}
+
+/* ПРЕЛОАДЕР (ЕСЛИ НУЖЕН) */
+#preloader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* поверх всего контента */
+}
+
+#loaderCanvas {
+  width: 300px; 
+  height: 300px;
+  cursor: wait; /* Можно поменять курсор на более подходящий */
 }
