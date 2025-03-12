@@ -4,9 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shubarium Landing</title>
+  
+  <!-- Подключаем стили -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Three.js и загрузчик GLTF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/loaders/GLTFLoader.js"></script>
+  
+  <!-- Наш скрипт для прелоадера (3D-модель и т.п.) -->
   <script src="loader.js" defer></script>
 </head>
 <body>
@@ -14,6 +20,7 @@
   <div id="preloader">
     <canvas id="loaderCanvas"></canvas>
   </div>
+
   <!-- Шапка сайта -->
   <header class="hero-section">
     <div class="hero-content">
@@ -90,6 +97,15 @@
          Памятка: нефть не место для селёдки!</p>
     </div>
   </footer>
+
+  <!-- Скрываем прелоадер после полной загрузки страницы -->
+  <script>
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      // Когда страница (и все ресурсы) загрузились, скрываем прелоадер
+      preloader.style.display = 'none'; 
+    });
+  </script>
 
 </body>
 </html>
