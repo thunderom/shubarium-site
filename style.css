@@ -1,48 +1,182 @@
+/* Стили в духе fpibank.com — чистые, ровные, с яркими акцентами */
+
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.5;
 }
 
-header {
-    background: linear-gradient(90deg, #ff007f, #00ff66);
-    padding: 20px;
-    font-size: 24px;
+/* Общие контейнеры */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-h1 {
-    margin: 0;
-    font-size: 48px;
+/* Шапка */
+.hero-section {
+  background: linear-gradient(150deg, #ff00a8 0%, #00ff66 100%);
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
 }
 
-p {
-    font-size: 18px;
-    margin: 10px 0;
+.hero-title {
+  font-size: 56px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-section {
-    padding: 40px 20px;
+.hero-subtitle {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-#tokenomics p {
-    font-size: 20px;
-    font-weight: bold;
+.hero-subnote {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-a {
-    display: inline-block;
-    background-color: #ff007f;
-    color: #ffffff;
-    padding: 10px 20px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
+.hero-button {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-a:hover {
-    background-color: #00ff66;
+.hero-button:hover {
+  background-color: #333;
+}
+
+/* Преимущества (features) */
+.features {
+  background-color: #fff;
+  color: #333;
+  padding: 60px 0;
+}
+
+.features h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.feature-box {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.feature-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.feature-box p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Секция о нас (values) */
+.values {
+  background-color: #fafafa;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.values h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(150deg, #00ff66 0%, #ff00a8 100%);
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 14px 28px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #333;
+}
+
+/* Контакты */
+.contacts {
+  background-color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.contacts h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.contacts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.contact-box {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 240px;
+}
+
+.contact-box h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* Футер */
+footer {
+  background-color: #f0f0f0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
 }
