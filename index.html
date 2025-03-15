@@ -110,7 +110,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('shubarium-site/sw.js')
           .then(() => console.log('Service Worker registered!'))
           .catch(err => console.log('Service Worker failed:', err));
       });
