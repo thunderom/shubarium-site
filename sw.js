@@ -1,11 +1,10 @@
 // sw.js
 const CACHE_NAME = 'shubarium-cache-v1';
 const ASSETS_TO_CACHE = [
-  '/',               // Главная страница
-  '/index.html',     // Версия с путями, актуальными для GitHub Pages
-  '/style.css',
-  '/loader.js',
-  '/assets/models/tripo.glb', // 3D-модель
+  'index.html',     // Версия с путями, актуальными для GitHub Pages
+  'style.css',
+  'loader.js',
+  'assets/models/tripo.glb', // 3D-модель
   // Добавьте другие файлы (изображения, иконки, шрифты) при необходимости
 ];
 
