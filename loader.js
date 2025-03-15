@@ -1,29 +1,27 @@
 // loader.js
-// Предположим, что tripo.glb лежит в assets/models/tripo.glb
+// Предполагаем, что у вас уже есть код для Three.js, чтобы загружать модель.
+// Добавим таймер на 2 секунды, прежде чем скрывать прелоадер.
 
-let scene, camera, renderer, mixer;
-let modelLoaded = false; // Будет true, когда модель загрузится
-
-initLoader3D();
+let scene, camera, renderer;
+let modelLoaded = false;
 
 function initLoader3D() {
   const canvas = document.getElementById('loaderCanvas');
 
-  // Создаём сцену, камеру
+  // Создаем сцену
   scene = new THREE.Scene();
   camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
   camera.position.set(0, 0, 3);
 
-  // Рендерер
   renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
   renderer.setSize(canvas.clientWidth, canvas.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
 
-  // Добавим освещение
+  // Свет
   const light = new THREE.HemisphereLight(0xffffff, 0x333333, 1);
   scene.add(light);
 
-  // Загрузка модели GLB
+  // Загрузчик GLTF
   const loader = new THREE.GLTFLoader();
   loader.load(
     'assets/models/tripo.glb',
@@ -32,11 +30,9 @@ function initLoader3D() {
       scene.add(model);
       modelLoaded = true;
     },
-    function (xhr) {
-      // xhr.loaded / xhr.total показывает прогресс
-    },
+    undefined,
     function (error) {
-      console.error('Ошибка загрузки модели:', error);
+      console.error('Ошибка при загрузке модели:', error);
     }
   );
 
@@ -47,9 +43,21 @@ function animate() {
   requestAnimationFrame(animate);
 
   if (modelLoaded) {
-    // Можно вращать сцену или саму модель
+    // Вращение сцены или модели
     scene.rotation.y += 0.01;
   }
 
   renderer.render(scene, camera);
 }
+
+// Запуск при загрузке скрипта
+initLoader3D();
+
+// Скрытие прелоадера спустя 2 секунды после полной загрузки
+window.addEventListener('load', () => {
+  // Ждём 2 секунды
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'none'; // Или preloader.remove();
+  }, 2000);
+});
